@@ -1,6 +1,8 @@
+
+
 @font-face {
   font-family: "Formular";
-  src: url("../fonts/FormularLight.woff2") format("woff2");
+  src: url("/fonts/FormularLight.woff2") format("woff2");
   font-weight: 300;
   font-display: swap;
   font-style: normal;
@@ -8,7 +10,7 @@
 
 @font-face {
   font-family: "Formular";
-  src: url("../fonts/FormularRegular.woff2") format("woff2");
+  src: url("/fonts/FormularRegular.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
   font-style: normal;
@@ -16,7 +18,7 @@
 
 @font-face {
   font-family: "Formular";
-  src: url("../fonts/FormularMedium.woff2") format("woff2");
+  src: url("/fonts/Formular-Medium.woff2") format("woff2");
   font-weight: 700;
   font-display: swap;
   font-style: normal;
@@ -24,11 +26,13 @@
 
 @font-face {
   font-family: "Formular";
-  src: url("../fonts/FormularBold.woff2") format("woff2");
+  src: url("/fonts/Formular-Bold.woff2") format("woff2");
   font-weight: 900;
   font-display: swap;
   font-style: normal;
 }
+
+/* БАЗОВЫЕ СТИЛИ */
 
 html {
   box-sizing: border-box;
@@ -93,8 +97,11 @@ a {
 .container {
   margin: 0 auto;
   padding: 36px 15px;
-  max-width: calc(1536px + (15px * 2));
+  max-width: 100%;
+  width: 1536px;
 }
+
+/* ТИПОГРАФИЯ И ОБЩИЕ КОМПОНЕНТЫ */
 
 .style-title {
   font-size: 30px;
@@ -129,6 +136,7 @@ a {
   background-color: #6d28d9;
 }
 
+/* Поля ввода */
 input {
   flex: 1;
   font-size: 16px;
@@ -187,7 +195,8 @@ textarea:focus {
   border-color: #8b5cf6;
 }
 
-/* Header */
+/* ШАПКА САЙТА — HEADER */
+
 .header {
   position: relative;
   padding: 24px 0;
@@ -265,8 +274,8 @@ textarea:focus {
 
 .header-top__tel-text {
   font-size: 24px;
-  font-weight: 300;
-  line-height: 32px;
+  font-weight: 341;
+  line-height: 40px;
   margin: 0;
 }
 
@@ -274,7 +283,8 @@ textarea:focus {
   align-items: flex-start;
 }
 
-/* Navigation */
+/* НАВИГАЦИЯ */
+
 .nav {
   flex-direction: column;
   align-items: center;
@@ -318,7 +328,10 @@ textarea:focus {
   min-width: 200px;
 }
 
-/* Hero Section */
+/* ============================================= */
+/* ГЛАВНЫЙ ЭКРАН — HERO */
+/* ============================================= */
+
 .hero {
   padding-top: 36px;
 }
@@ -435,7 +448,10 @@ textarea:focus {
   outline: none;
 }
 
-/* Benefits Section */
+/* ============================================= */
+/* ПРЕИМУЩЕСТВА — BENEFITS */
+/* ============================================= */
+
 .benefits__title {
   text-align: center;
   margin-bottom: 24px;
@@ -469,9 +485,13 @@ textarea:focus {
   color: #000;
 }
 
-/* Garanty Section */
+/* ============================================= */
+/* ГАРАНТИИ — GARANTY */
+/* ============================================= */
+
 .garanty {
   color: #111827;
+  padding-bottom: 72px;
 }
 
 .garanty__content {
@@ -537,73 +557,92 @@ textarea:focus {
   border-radius: 12px;
 }
 
-/* Reviews Section */
-.reviews__container {
+/* ОТЗЫВЫ — REVIEWS */
+
+.reviews {
+  padding-top: 0;
   position: relative;
-  padding-bottom: 72px;
+}
+
+.reviews__container {
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .reviews__title {
-  grid-column: 12 span;
+  padding-top: 0;
+  font-size: 32px;
+  font-weight: 900;
   text-align: center;
-  margin-bottom: 8px;
-}
-
-.reviews__slider-container {
-  grid-column: 2/10 span;
+  margin-bottom: 32px;
+  color: #111827;
 }
 
 .reviews__slider {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 20px 0;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.reviews__slider::-webkit-scrollbar {
-  display: none;
 }
 
 .reviews__slide {
-  flex: 0 0 100%;
-  scroll-snap-align: start;
+  background: #ffffff;
   border-radius: 16px;
-  background: #f9fafb;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
 .reviews__content {
-  padding: 32px 43px;
+  flex: 1;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .reviews__text {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 32px;
-  margin: 0;
-  color: #111827;
+  font-size: 18px;
+  line-height: 28px;
+  color: #1f2937;
+  margin-bottom: 32px;
 }
 
 .reviews__author {
+  display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
+  align-items: flex-end;
 }
 
 .reviews__name {
-  font-size: 24px;
-  font-weight: 300;
-  line-height: 32px;
-  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
   color: #6d28d9;
 }
 
-/* Contact Section */
+.reviews__icon {
+  width: 48px;
+  height: 48px;
+  opacity: 0.15;
+}
+
+
+
+.reviews__arrow img {
+  width: 24px;
+  height: 24px;
+}
+
+.reviews__arrow:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.reviews__arrow-left  { left: -24px; }
+.reviews__arrow-right { right: -24px; }
+
+
+/* КОНТАКТНАЯ ФОРМА — CONTACT */
+
+
 .contact__container {
   padding: 72px 15px;
 }
@@ -672,7 +711,9 @@ textarea:focus {
   outline: none;
 }
 
-/* Footer */
+
+/* футер */
+
 .footer {
   background: #111827;
   padding: 40px 0;
@@ -826,9 +867,9 @@ textarea:focus {
   color: #6d28d9;
 }
 
-/* ============================================= */
-/* МЕДИА-ЗАПРОСЫ */
-/* ============================================= */
+
+/* АДАПТИВ */
+
 
 /* Максимальная ширина 1536px */
 @media (max-width: 1536px) {
@@ -1152,13 +1193,13 @@ textarea:focus {
     padding: 12px 0;
   }
 
-   .header-top {
+  .header-top {
     align-items: center;
     padding-bottom: 0;
     justify-content: space-between;
   }
 
- .header-top__cost {
+  .header-top__cost {
     display: none;
   }
 
@@ -1166,13 +1207,14 @@ textarea:focus {
     font-size: 18px;
     line-height: 28px;
   }
+
   .header-top__info-tel {
     min-width: inherit;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     position: relative;
-    width: auto; /* Добавляем */
+    width: auto;
   }
 
   .header-top__tel {
@@ -1199,10 +1241,10 @@ textarea:focus {
     background-position: center;
   }
 
-
-.nav {
+  .nav {
     display: none;
   }
+
   .nav__content {
     max-width: 640px;
     padding: 12px 15px;
@@ -1260,3 +1302,33 @@ textarea:focus {
   }
 }
 
+
+
+
+/* Адаптив */
+@media (max-width: 1536px) {
+  .reviews__slider {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 1024px и ниже — только 1 отзыв (Анна) */
+@media (max-width: 1024px) {
+  .reviews__slider {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 758px) {
+  .reviews {
+    padding: 60px 0;
+  }
+  
+  .reviews__slide {
+    padding: 28px 24px;
+  }
+  
+  .reviews__arrow {
+    display: none;
+  }
+}
